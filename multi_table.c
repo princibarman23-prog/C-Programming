@@ -1,12 +1,19 @@
-#include<stdio.h>
-int main(){ 
-    int n, sum = 0;
-    printf("Enter a positive integer: ");
-    scanf("%d", &n);
-    for(int i = 1; i <= n; i++){
-        sum += i;
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Enter an integer to generate its multiplication table: ");
+    if (scanf("%d", &n) != 1) {
+        printf("Invalid input.\n");
+        return 1;
     }
-    printf("Sum of first %d natural numbers is: %d", n, sum);
+
+    printf("\nMultiplication Table for %d:\n", n);
+    printf("-----------------------------\n");
+
+    for (int i = 1; i <= 10; i++) {
+        printf("%d x %d = %d\n", n, i, n * i);
+    }
+
     return 0;
 }
-
